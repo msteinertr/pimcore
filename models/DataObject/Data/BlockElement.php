@@ -25,8 +25,8 @@ use Pimcore\Model\DataObject\Traits\OwnerAwareFieldTrait;
 use Pimcore\Model\Element\ElementDescriptor;
 use Pimcore\Model\Element\ElementInterface;
 use Pimcore\Model\Element\Service;
-use Pimcore\Model\Version\MarshalMatcher;
-use Pimcore\Model\Version\UnmarshalMatcher;
+use Pimcore\Model\Element\DeepCopy\MarshalMatcher;
+use Pimcore\Model\Element\DeepCopy\UnmarshalMatcher;
 
 class BlockElement extends AbstractModel implements OwnerAwareFieldInterface
 {
