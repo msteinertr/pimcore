@@ -100,6 +100,8 @@ class ImplementationLoader implements LoaderInterface, ClassNameLoaderInterface
      */
     public function build(string $name, array $params = [])
     {
+        $name[0] = $name[0] == "i" ? "I" : $name[0];
+        
         $loader = $this->getLoader($name);
         if (null === $loader) {
             throw new UnsupportedException(sprintf('Loader for "%s" was not found', $name));
