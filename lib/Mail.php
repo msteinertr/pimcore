@@ -541,6 +541,7 @@ class Mail extends \Swift_Message
      */
     public function send(\Swift_Mailer $mailer = null)
     {
+        setlocale(LC_ALL, 'C');
         $this->setSubject($this->getSubjectRendered());
 
         $bodyHtmlRendered = $this->getBodyHtmlRendered();
