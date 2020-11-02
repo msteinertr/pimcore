@@ -239,14 +239,14 @@ class Ghostscript extends Adapter
                 if ($page) {
                     $pageRange = '-f ' . $page . ' -l ' . $page . ' ';
                 }
-                $text = Console::exec(self::getPdftotextCli() . ' ' . $pageRange . escapeshellarg($path) . ' -', null, 120);
+                // $text = Console::exec(self::getPdftotextCli() . ' ' . $pageRange . escapeshellarg($path) . ' -', null, 120);
             } catch (\Exception $e) {
                 // pure ghostscript way
                 if ($page) {
                     $pageRange = '-dFirstPage=' . $page . ' -dLastPage=' . $page . ' ';
                 }
-                $textFile = PIMCORE_SYSTEM_TEMP_DIRECTORY . '/pdf-text-extract-' . uniqid() . '.txt';
-                Console::exec(self::getGhostscriptCli() . ' -dBATCH -dNOPAUSE -sDEVICE=txtwrite ' . $pageRange . '-dTextFormat=2 -sOutputFile=' . $textFile . ' ' . escapeshellarg($path), null, 120);
+                // $textFile = PIMCORE_SYSTEM_TEMP_DIRECTORY . '/pdf-text-extract-' . uniqid() . '.txt';
+                // Console::exec(self::getGhostscriptCli() . ' -dBATCH -dNOPAUSE -sDEVICE=txtwrite ' . $pageRange . '-dTextFormat=2 -sOutputFile=' . $textFile . ' ' . escapeshellarg($path), null, 120);
 
                 if (is_file($textFile)) {
                     $text = file_get_contents($textFile);
